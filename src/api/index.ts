@@ -1,6 +1,7 @@
+import { IApiItemResponse } from "screens/Home";
 
 export const getRepos = (query = "") => {
-  return new Promise((resolve, reject) => {
+  return new Promise<IApiItemResponse>((resolve, reject) => {
     if (query.length === 0) {
       resolve();
     } else {
