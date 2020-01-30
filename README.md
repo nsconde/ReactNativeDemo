@@ -20,3 +20,8 @@ react-native run-ios
 # Have an Android emulator running (quickest way to get started), or a device connected.
 react-native run-android
 ```
+
+Run a separate metro window if you get a packager error:
+```bash
+yarn start --reset-cache
+```
