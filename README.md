@@ -1,20 +1,25 @@
-React Native TypeScript Example
+Hotel Engine Example
 ----
 
-Create a new TypeScript project:
+Install packages:
 
 ```
-react-native init ReactNativeTypeScript --template typescript
+yarn install
 ```
+
+Follow appropriate device instructions:
 
 ```bash
 # Run instructions for iOS:
-npm run ios
+cd ios
+pod install
+cd ..
+react-native run-ios
 # - or -
-# • Open ReactNativeTypeScript/ios/ReactNativeTypeScript.xcworkspace in Xcode or run "xed -b ios"
+# • Open ReactNativeTypeScript/ios/hotelEngine.xcworkspace in Xcode or run "xed -b ios"
 # • Hit the Run button
 
 # Run instructions for Android:
 # Have an Android emulator running (quickest way to get started), or a device connected.
-npm run android
+react-native run-android
 ```

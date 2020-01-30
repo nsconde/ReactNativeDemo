@@ -8,11 +8,13 @@ import {
   ListRenderItemInfo,
   TextInputSubmitEditingEventData,
   NativeSyntheticEvent,
+  GestureResponderEvent,
 } from 'react-native';
 import { ListItem, SearchBar } from "react-native-elements";
 import { getRepos } from 'api/index';
+import { NavigationScreenProp, NavigationParams, NavigationState } from 'react-navigation';
 
-interface IGithubRepoItem {
+export interface IGithubRepoItem {
   id: string,
   name: string, 
   description: string, 
@@ -32,7 +34,7 @@ export interface IApiItemResponse {
   items: IGithubRepoItem[]
 }
 
-const Home = () => {
+const Home = (props: { navigation: NavigationScreenProp<NavigationState, NavigationParams> }) => {
 
   const [state, setState] = useState<IComponentState>({loading: false, repoItems: []});
 
@@ -46,6 +48,10 @@ const Home = () => {
         setState({repoItems: response.items, loading: false });
     });
     
+  }
+
+  const navigateToDetails = (e: GestureResponderEvent, detailItem: IGithubRepoItem) => {
+	props.navigation.navigate('Details', { item: detailItem })
   }
 
   const renderSeparator = () => {
@@ -86,7 +92,8 @@ const Home = () => {
         title={element.item.name}
         subtitle={element.item.description}
         bottomDivider
-        containerStyle={{ borderBottomWidth: 0 }}
+		containerStyle={{ borderBottomWidth: 0 }}
+		onPress={(e) => { navigateToDetails(e, element.item)}}
       />
     )
   }

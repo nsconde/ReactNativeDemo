@@ -4,8 +4,8 @@ import Home from 'screens/Home';
 import DetailCard from 'screens/DetailCard';
 
 const MainNavigator = createStackNavigator({
-  Home: {screen: Home, navigationOptions: {title: 'Search'}},
-  Profile: {screen: DetailCard, navigationOptions: {title: 'Details'}},
+  Home: {screen: Home, navigationOptions: {title: 'Home'}},
+  Details: {screen: DetailCard, navigationOptions: {title: 'Details'}},
 });
 
 const App = createAppContainer(MainNavigator);
