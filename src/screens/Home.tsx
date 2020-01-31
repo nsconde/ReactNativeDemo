@@ -19,7 +19,8 @@ export interface IGithubRepoItem {
   name: string, 
   description: string, 
   stargazers_count: number, 
-  language: string, 
+  language: string,
+  html_url: string,
   owner: { login: string, avatar_url: string }
 }
 
