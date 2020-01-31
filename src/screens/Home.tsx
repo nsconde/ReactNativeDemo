@@ -51,7 +51,7 @@ const Home = (props: { navigation: NavigationScreenProp<NavigationState, Navigat
   }
 
   const navigateToDetails = (e: GestureResponderEvent, detailItem: IGithubRepoItem) => {
-	props.navigation.navigate('Details', { item: detailItem })
+	  props.navigation.navigate('Details', { item: detailItem })
   }
 
   const renderSeparator = () => {
@@ -92,8 +92,8 @@ const Home = (props: { navigation: NavigationScreenProp<NavigationState, Navigat
         title={element.item.name}
         subtitle={element.item.description}
         bottomDivider
-		containerStyle={{ borderBottomWidth: 0 }}
-		onPress={(e) => { navigateToDetails(e, element.item)}}
+        containerStyle={{ borderBottomWidth: 0 }}
+        onPress={(e) => { navigateToDetails(e, element.item)}}
       />
     )
   }
